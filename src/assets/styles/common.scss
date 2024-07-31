@@ -1,0 +1,22 @@
+:root {
+  --ddd-c-white: rgb(255, 255, 255);
+  --ddd-c-black: rgb(0, 0, 0);
+  --ddd-c-gray: rgb(200, 200, 200);
+  --ddd-c-blue: rgb(0, 0, 255);
+  --ddd-text-base: var(--ddd-c-black);
+  --ddd-border-base: var(--ddd-c-gray);
+  --ddd-bg-command: var(--ddd-c-white);
+
+  --ddd-bg-base: var(--ddd-c-white);
+}
+
+html,
+body,
+#app {
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--ddd-bg-base);
+}

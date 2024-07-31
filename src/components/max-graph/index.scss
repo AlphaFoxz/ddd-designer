@@ -1,0 +1,18 @@
+.ddd-designer-graph {
+  display: flex;
+  flex-direction: row;
+  &-toolbar {
+    display: flex;
+    flex-direction: column;
+    width: 50px;
+    height: 100%;
+    padding: 10px;
+    border: 1px outset rgb(118, 118, 118);
+  }
+  &-container {
+    width: calc(100% - 50px);
+    &.dragging {
+      cursor: grab;
+    }
+  }
+}

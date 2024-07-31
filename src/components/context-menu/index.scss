@@ -1,0 +1,30 @@
+.context-menu {
+  color: var(--monaco-text-base);
+  position: fixed;
+  z-index: 10;
+  .menu-list {
+    background-color: var(--monaco-bg-contextmenu);
+    border-style: ridge;
+    border-color: var(--monaco-border-contextmenu);
+    border-width: 1px;
+    border-radius: 0.3rem;
+    .menu-item {
+      cursor: pointer;
+      font-size: 0.8rem;
+      color: var(--monaco-text-1);
+      border-radius: 0.2rem;
+      padding: 0 1rem;
+      margin: 5px;
+      &:hover {
+        color: white;
+        background-color: var(--monaco-bg-contextmenu-hover);
+      }
+    }
+    .line {
+      margin: 3px 0;
+      border-style: solid;
+      border-color: inherit;
+      border-width: 0 0 1px 0;
+    }
+  }
+}
