@@ -13,9 +13,9 @@ pub async fn get_ide_info() -> Result<HashSet<String>, String> {
         "Code.exe",
     ];
     let mut sys = System::new_all();
-    sys.refresh_processes();
+    sys.refresh_all();
     for (_, pname) in sys.processes().iter() {
-        let pname = pname.name();
+        let pname = pname.name().to_str().unwrap();
         if ide_names.contains(&pname) {
             result.insert(pname.to_string());
         }

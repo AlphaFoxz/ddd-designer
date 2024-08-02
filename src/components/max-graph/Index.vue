@@ -2,7 +2,7 @@
 import '@maxgraph/core/css/common.css'
 import './index.scss'
 import { useGraphStore } from './store'
-import { computed, nextTick, onMounted, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { supportsPassiveEvents } from 'detect-it'
 
 //===========================初始化容器==========================
@@ -10,16 +10,12 @@ const toolbarRef = ref<HTMLDivElement>()
 const containerRef = ref<HTMLDivElement>()
 const graphRootRef = ref<HTMLDivElement>()
 let graphStore = useGraphStore()
-const isDragging = computed(() => {
-  console.debug('isDragging', graphStore.state.operationMode.value)
-  nextTick(() => {
-    console.debug('isDragging', graphStore.state.operationMode.value)
-  })
+const isViewMode = computed(() => {
   return graphStore.state.operationMode.value === 'View'
 })
 onMounted(async () => {
   const contain = containerRef.value!
-  await graphStore.operation.init(contain, toolbarRef.value!)
+  await graphStore.action.init(contain, toolbarRef.value!)
   contain.addEventListener('wheel', handleZoom, {
     passive: supportsPassiveEvents,
   })
@@ -28,10 +24,10 @@ onMounted(async () => {
 function handleZoom(e: WheelEvent) {
   if (e.deltaY < 0) {
     // 向上滚动，放大
-    graphStore!.operation.zoomIn()
+    graphStore!.action.zoomIn()
   } else {
     // 向下滚动，缩小
-    graphStore!.operation.zoomOut()
+    graphStore!.action.zoomOut()
   }
 }
 </script>
@@ -42,7 +38,7 @@ function handleZoom(e: WheelEvent) {
     <div
       ref="containerRef"
       :class="`ddd-designer-graph-container 
-        ${isDragging ? 'dragging' : ''}
+        ${isViewMode ? 'view-mode' : ''}
         `"
     ></div>
   </div>

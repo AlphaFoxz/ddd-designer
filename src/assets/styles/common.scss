@@ -1,13 +1,23 @@
 :root {
-  --ddd-c-white: rgb(255, 255, 255);
-  --ddd-c-black: rgb(0, 0, 0);
-  --ddd-c-gray: rgb(200, 200, 200);
-  --ddd-c-blue: rgb(0, 0, 255);
-  --ddd-text-base: var(--ddd-c-black);
-  --ddd-border-base: var(--ddd-c-gray);
-  --ddd-bg-command: var(--ddd-c-white);
+  --ddd-c-white-1: rgb(255, 255, 255);
+  --ddd-c-black-1: rgb(0, 0, 0);
+  --ddd-c-gray-1: rgb(200, 200, 200);
+  --ddd-c-blue-1: rgb(0, 0, 255);
+  --ddd-c-blue-2: rgb(195, 217, 255);
+  --ddd-c-yellow-1: rgb(255, 255, 125);
+  --ddd-c-orange-1: rgb(255, 165, 0);
+  --ddd-c-purple-1: rgb(205, 167, 255);
+  --ddd-c-green-1: rgb(129, 255, 129);
 
-  --ddd-bg-base: var(--ddd-c-white);
+  --ddd-text-base-1: var(--ddd-c-black-1);
+  --ddd-border-base-1: var(--ddd-c-gray-1);
+  --ddd-bg-base-1: var(--ddd-c-white-1);
+
+  --ddd-bg-command-node-1: var(--ddd-c-blue-2);
+  --ddd-bg-aggregate-node-1: var(--ddd-c-yellow-1);
+  --ddd-bg-event-node-1: var(--ddd-c-orange-1);
+  --ddd-bg-policy-node-1: var(--ddd-c-purple-1);
+  --ddd-bg-recordmodel-node-1: var(--ddd-c-green-1);
 }
 
 html,
@@ -18,5 +28,5 @@ body,
   margin: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--ddd-bg-base);
+  background-color: var(--ddd-bg-base-1);
 }

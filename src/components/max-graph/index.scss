@@ -11,8 +11,12 @@
   }
   &-container {
     width: calc(100% - 50px);
-    &.dragging {
+    &.view-mode {
       cursor: grab;
+    }
+
+    g[direction] text {
+      user-select: none;
     }
   }
 }

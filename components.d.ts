@@ -7,7 +7,6 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    Command: typeof import('./src/components/max-graph/command-node/Command.vue')['default']
     CommandNode: typeof import('./src/components/max-graph/command-node/CommandNode.vue')['default']
     Index: typeof import('./src/components/context-menu/Index.vue')['default']
   }

@@ -1,9 +1,9 @@
-import * as operation from './operation'
+import * as action from './action'
 import * as state from './state'
 
 export function useGraphStore() {
   return {
     state,
-    operation,
+    action,
   }
 }
